@@ -28,6 +28,8 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if not os.path.exists(args.input):
+        raise RuntimeError(f"Unable to locate find file or directory {args.input}.")
 
     input_files = []
     if os.path.isdir(args.input):
