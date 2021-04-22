@@ -115,12 +115,6 @@ Without any configuration, try this simple usecase. This command will convert `e
 python pgf2pdf.py example_fig.pgf
 ```
 
-<object data="example_fig.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="example_fig.pdf">
-        <p>This browser does not support PDFs.</p>
-    </embed>
-</object>
-
 #### 2.2.3.
 
 Simply import it as an image.
