@@ -115,7 +115,7 @@ Without any configuration, try this simple usecase. This command will convert `e
 python pgf2pdf.py example_fig.pgf
 ```
 
-#### 2.2.3.
+##### 2.2.3.
 
 Simply import it as an image.
 
