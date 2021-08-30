@@ -2,6 +2,8 @@ import argparse
 import os
 import tempfile
 
+__all__ = ['pgf2pdf']
+
 TEMPLATE = r"""
 \documentclass[pgfplots]{standalone}
 
@@ -26,7 +28,7 @@ def parse_args():
     return args
 
 
-def main():
+def pgf2pdf():
     args = parse_args()
     if not os.path.exists(args.input):
         raise RuntimeError(f"Unable to locate find file or directory {args.input}.")
@@ -60,4 +62,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    pgf2pdf()

@@ -99,25 +99,35 @@ compilation.
 
 On Windows, I recommend installing latest version of [TeXLive](https://www.tug.org/texlive/).
 
-##### 2.2.2. Usage
+##### 2.2.2. Installation
+
+Clone the repo and install with pip:
+
+```terminal
+pip install .
+```
+
+##### 2.2.3. Usage
 
 *(to be decided)*
 
-For now, run help first:
+Once you installed the package, a console script is available.
+For now, run help first to see the available options:
 
 ```terminal
-python pgf2pdf.py --help
+pgf2pdf --help
 ```
 
-Without any configuration, try this simple usecase. This command will convert `example_fig.pgf` to `example_fig.pdf`:
+Without any configuration, try this simple usecase.
+This command will convert `example_fig.pgf` to `example_fig.pdf`:
 
 ```terminal
-python pgf2pdf.py example_fig.pgf
+pgf2pdf example_fig.pgf
 ```
 
-##### 2.2.3.
+##### 2.2.4. Benefit
 
-Simply import it as an image.
+Simply import the pdf file.
 
 ```latex
 \begin{figure}[htbp]
