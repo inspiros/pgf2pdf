@@ -11,7 +11,7 @@ setup(
     packages=find_packages(exclude=("example",)),
     entry_points={
         'console_scripts': [
-            'pgf2pdf = pgf2pdf.main:pgf2pdf',
+            'pgf2pdf = pgf2pdf.main:main',
         ],
     },
 )

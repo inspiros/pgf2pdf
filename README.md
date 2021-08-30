@@ -1,11 +1,13 @@
 # PGF to PDF converter
 
 ## Why?
+
 - No more blurry images.
 - Native text typeset.
 - Beautiful plots (*depends*).
 
 ## How?
+
 ### 1. Plot with `matplotlib` and save as `.pgf` format
 
 Python's `matplotlib` provides ease integration with LaTeX. Try this simple python file `example_fig.py` that saves the
@@ -58,6 +60,11 @@ plt.rcParams.update({
 
 Ref: https://matplotlib.org/stable/gallery/userdemo/pgf_preamble_sgskip.html
 
+#### Why not directly save `matplotlib` figure as `.pdf` format
+
+First, it will not have the uniformal LaTeX font. Second, the fonts you use must be embedded within the `.pdf` file,
+otherwise, LaTeX compilers (and Journal editors) may complaint.
+
 ### 2. Load `.pgf` file in LaTeX
 
 #### 2.1. Directly import `.pgf` files
@@ -109,25 +116,35 @@ pip install .
 
 ##### 2.2.3. Usage
 
+###### 2.2.3.1 In Terminal
 *(to be decided)*
 
-Once you installed the package, a console script is available.
-For now, run help first to see the available options:
+Once you installed the package, a console script is available. For now, run help first to see the available options:
 
 ```terminal
 pgf2pdf --help
 ```
 
-Without any configuration, try this simple usecase.
-This command will convert `example_fig.pgf` to `example_fig.pdf`:
+Without any configuration, try this simple usecase. This command will convert `example_fig.pgf` to `example_fig.pdf`:
 
 ```terminal
-pgf2pdf example_fig.pgf
+pgf2pdf example/example_fig.pgf
+```
+
+###### 2.2.3.1 In Python
+
+```python
+from pgf2pdf import pgf2pdf
+
+# convert single file
+pgf2pdf(input='./example/example_fig.pgf', engine='pdflatex')
+# convert all files in folder
+pgf2pdf(input='./example', engine='pdflatex')
 ```
 
 ##### 2.2.4. Benefit
 
-Simply import the pdf file.
+Simply import the `.pdf` file:
 
 ```latex
 \begin{figure}[htbp]
